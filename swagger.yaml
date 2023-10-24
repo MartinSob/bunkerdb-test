@@ -30,8 +30,18 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                name:
+                  type: string
+                country:
+                  type: string
+                  enum: ['UY', 'BR', 'AR']
+              required:
+                - name
+                - country
               example:
-                amount: 100
+                name: 'Cocacola'
+                country: 'AR'
       responses:
         '200':
           description: Successful response
