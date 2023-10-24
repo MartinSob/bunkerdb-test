@@ -1,5 +1,5 @@
 import { createRequest, createResponse } from 'node-mocks-http';
-import { getCompany } from '../index';
+import { getCompanyById } from '../index';
 import { companyMock } from '../../../../../tests/mocks/companyMock'
 
 jest.mock("../../../../models", () => ({
@@ -8,12 +8,12 @@ jest.mock("../../../../models", () => ({
   }
 }));
 
-describe('Get company', () => {
+describe('Get company by Id', () => {
   it('returns http code 200 with company', async () => {
     const req = createRequest();
     const res = createResponse();
 
-    await getCompany(req, res);
+    await getCompanyById(req, res);
 
     const data = res._getJSONData();
 
