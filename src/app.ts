@@ -13,7 +13,7 @@ const start = async (): Promise<void> => {
 
     app.use('/', routes);
     app.listen(config.PORT, () => {
-      console.log(`Server running at http://localhost:${config.PORT}`);
+      console.log(`🟢 Server running at http://localhost:${config.PORT}`);
     });
   } catch (error) {
     console.error(error);

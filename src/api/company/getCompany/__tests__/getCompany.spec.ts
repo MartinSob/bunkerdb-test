@@ -1,23 +1,23 @@
 import { createRequest, createResponse } from 'node-mocks-http';
-import { getCompanies } from '../index';
+import { getCompany } from '../index';
 import { companyMock } from '../../../../../tests/mocks/companyMock'
 
 jest.mock("../../../../models", () => ({
   Company: {
-    findAll: () => companyMock
+    findByPk: () => companyMock[0]
   }
 }));
 
-describe('Get companies', () => {
-  it('returns http code 200', async () => {
+describe('Get company', () => {
+  it('returns http code 200 with company', async () => {
     const req = createRequest();
     const res = createResponse();
 
-    await getCompanies(req, res);
+    await getCompany(req, res);
 
     const data = res._getJSONData();
 
     expect(res.statusCode).toBe(200);
-    expect(data[0].name).toBe('CocaCola');
+    expect(data.name).toBe('CocaCola');
   });
 });
