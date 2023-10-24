@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "dc740dbb-cf2d-473d-baf8-b3263daa9101",
+		"name": "Bunkerdb test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24316392"
+	},
+	"item": [
+		{
+			"name": "Post company",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Google\",\r\n    \"country\": \"AR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/company",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all companies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/company",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get company by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/company/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"company",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

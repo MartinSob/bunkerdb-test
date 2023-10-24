@@ -1,0 +1,58 @@
+openapi: 3.0.0
+info:
+  title: BunkerDb test
+  description: List of necessary endpoints for the test of BunkerDb.
+  version: 1.0.0
+
+servers:
+  - url: localhost:3000/
+
+paths:
+  /company:
+    get:
+      tags:
+        - default
+      summary: Gets all companies
+      description: "Gets all companies."
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+
+    post:
+      tags:
+        - default
+      summary: Creates a new company.
+      description: "Creates a new company."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                amount: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+
+  /company/{id}:
+    get:
+      tags:
+        - default
+      summary: Get a company by Id
+      description: "Get a company based on the \\`id\\` passed as path parameter."
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
