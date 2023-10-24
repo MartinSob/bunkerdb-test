@@ -28,3 +28,14 @@ This project also uses [MySQL](https://www.mysql.com/). The credentials for the 
 ### Endpoints
 
 The documentation for the endpoints can be found in the swagger file and also in the `postman_collection` file.
+
+### Database
+
+The original structure of the database was not well designed so I implemented some changes using SQL scritps. To create and fix the database follow these steps:
+
+1. First we start with the original designed which can be found in the file `src/database/scripts/initial.sql`
+1. Then, we can add some data into the database tables using the script in `src/database/scripts/insert_data.sql`
+1. Finally, we can fix the database structure using `src/database/scripts/fix_db.sql`. In this file we are:
+    1. Renaming the tables so both of them are in plural
+    1. Removing unnecessary column `cant_employees`
+    1. Replacing the company name as the FK for the Id
